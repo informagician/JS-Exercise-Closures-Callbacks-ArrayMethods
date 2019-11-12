@@ -119,9 +119,8 @@ function processSum(numberList, callback) {
 */
 function processProduct(num1, num2, callback) {
   /* CODE HERE */
-  return callback(
-    (num1,num2) => {num1 * num2}
-  );
+  let num = num1 * num2;
+  return callback(num);
 }
 //const product = function(num1, num2) {
 //  return num1 * num2;
