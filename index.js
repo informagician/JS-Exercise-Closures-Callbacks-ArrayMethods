@@ -91,9 +91,13 @@ function processLastItem(stringList, callback) {
 */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  return callback(numberList.reduce((acc,cur) => acc + cur));
+  let sum = 0;
+  for (let i =0; i < numberList.length; i++){
+    sum += numberList[i];
+  }
+  return callback(sum);
 }
-//const reducer = (acc,cur) => acc + cur;
+
 
 /**
  * ### Challenge `processProduct`
@@ -273,10 +277,11 @@ function tallyUpDonations(runners) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
+  var count = 0;
   function counter() {
-    ++count
+    return count++;
   }
+  return counter;
   // BROKEN CODE ENDS
 }
 
@@ -300,8 +305,18 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(max) {
   /* CODE HERE */
+  var count = 0;
+  function counter() {
+    if (count < max) {
+      return count++;
+    } else if (count >= max ) {
+      count = 0;
+      return count;
+    }
+  }
+  return counter;
 }
 
 /////////////// END OF CHALLENGE ///////////////
