@@ -313,14 +313,16 @@ function counterMaker() {
 */
 function counterMakerWithLimit(max) {
   /* CODE HERE */
-  var count = 0;
+ let count = 0;
+
   function counter() {
-    if (count < max) {
-      return count++;
-    } else if (count >= max ) {
-      count = 0;
-      return count;
-    }
+   if (count <= max) {
+     count++;
+     return count-1;
+   } else {
+     count = 0;
+     return count++;
+   }
   }
   return counter;
 }
